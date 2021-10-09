@@ -1,0 +1,62 @@
+.ActionButton
+{
+    --warning-cr: #ffbd2e;
+    --success-cr: #27c93f;
+    --info-cr: #267bc9;
+    --error-cr: #ff5f56;
+    --standard-cr: #000000;
+    padding: 5px 20px;
+    border-radius: 5px;    
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: center;
+    gap: 5px;
+}
+.ActionButton span
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+.action-button-1
+{
+
+}
+.action-button-1 span
+{
+    color: white !important;
+}
+.action-button-1 i
+{
+    color: white !important;
+}
+.action-button-2
+{
+    background-color: transparent !important
+}
+.action-button-standard
+{
+    background-color: var(--standard-cr);
+    border: 1px solid var(--standard-cr);
+}
+.action-button-info
+{
+    background-color: var(--info-cr);
+    border: 1px solid var(--info-cr);
+}
+.action-button-error
+{
+    background-color: var(--error-cr);
+    border: 1px solid var(--error-cr);
+}
+.action-button-warning
+{
+    background-color: var(--warning-cr);
+    border: 1px solid var(--warning-cr);
+}
+.action-button-success
+{
+    background-color: var(--success-cr);
+    border: 1px solid var(--success-cr);
+}
