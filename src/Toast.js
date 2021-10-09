@@ -357,7 +357,7 @@ class Toast extends Component {
               )}
               <div className="toast-details-container">
                 <span>{this.props.title}</span>
-                {this.props.description ? <p>this.props.description</p> : null}
+                <p>{this.props.description ? this.props.description : null}</p>
               </div>
             </div>
             {this.props.autoRemove || this.props.removeWhenClick ? null : (

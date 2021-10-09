@@ -88,8 +88,6 @@ export default function App() {
     <div className="App">
           <button
             onClick={() => { wrapper.current.add(<Toast title="Wow, It's done ✨" />); }}
-            variant="outlined"
-            color="error"
           >
             Show Toast Box
           </button>

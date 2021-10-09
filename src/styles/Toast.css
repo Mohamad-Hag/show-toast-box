@@ -1,6 +1,7 @@
 .Toast *
 {    
     outline: none;
+    margin: 0;
 }
 .toast-rtl *
 {

@@ -16,8 +16,7 @@
     z-index: 1;
 }
 .ToastWrapper *
-{
-    
+{   
     margin: 0;
 }
 .toast-wrapper-ltr *
