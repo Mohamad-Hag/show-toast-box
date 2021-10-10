@@ -59,7 +59,7 @@ class Toast extends Component {
         current.style.left = left < 0 ? `${-width}px` : `${width}px`;
         setTimeout(() => {
           this.close();
-        }, 10);
+        }, this.props.animationDuration);
         return;
       }
       current.style.filter = `opacity(1)`;

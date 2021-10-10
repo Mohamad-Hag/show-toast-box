@@ -1,6 +1,6 @@
 {
   "name": "show-toast-box",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "Show-Toast-Box is lightweight react.js library to show a toasts and notifications within your react application.",
   "repository": "git://github.com/Mohamad-Hag/show-toast-box.git",
   "keywords": [
