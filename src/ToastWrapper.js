@@ -15,7 +15,7 @@ class ToastWrapper extends Component {
     this.removeAll = this.removeAll.bind(this);
     this.add = this.add.bind(this);
     this.wait = this.wait.bind(this);
-    this.getToastsNumber = this.getToastsNumber.bind(this);
+    this.getToastsNumber = this.getToastsNumber.bind(this);    
     this.waitOverflowToasts = this.waitOverflowToasts.bind(this);
     this.removeQueueToasts = this.removeQueueToasts.bind(this);
     this.getQueueToastsNumber = this.getQueueToastsNumber.bind(this);
@@ -75,7 +75,6 @@ class ToastWrapper extends Component {
       ) {
         this.add(this.toastsQueue[0]);
         this.toastsQueue.shift();
-        console.log("added queued item!!!----");
         clearInterval(interval);
       }
     }, 100);
@@ -88,7 +87,6 @@ class ToastWrapper extends Component {
     ) {
       this.toastsQueue.push(toast);
       this.waitOverflowToasts();
-      console.log("added to queue!!");
       return;
     }
     let toastProps = { ...toast.props };

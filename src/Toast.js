@@ -44,6 +44,11 @@ class Toast extends Component {
     this.catchToast = this.catchToast.bind(this);
     this.releaseToast = this.releaseToast.bind(this);
     this.dragToast = this.dragToast.bind(this);
+    this.setRTLProperties = this.setRTLProperties.bind(this);
+    this.getDescription = this.getDescription.bind(this);
+  }
+  getDescription() {
+    return this.props.description ? <p>{this.props.description}</p> : null;
   }
   releaseToast() {
     if (!this.props.removeWhenDrag || this.props.loading) return;
@@ -268,16 +273,7 @@ class Toast extends Component {
   closeClicked() {
     this.close();
   }
-  componentDidMount() {
-    window.onmouseup = () => {
-      this.releaseToast();
-    };
-    this.setAnimationDuration();
-    this.add();
-    // if (this.props.autoRemove && this.props.pauseWhenWindowUnfocus) {
-    //   document.body.addEventListener("mouseleave", this.pauseToast());
-    //   window.addEventListener("focus", this.resumeToast());
-    // }
+  setRTLProperties() {
     let current = this.rootRef.current;
     if (this.props.direction === "rtl") {
       current.style.borderRightColor = `var(--${this.props.type}-cr)`;
@@ -285,6 +281,18 @@ class Toast extends Component {
       current.style.borderLeftWidth = `1px`;
       current.style.borderLeftColor = `var(--${this.props.theme}-border-cr)`;
     }
+  }
+  componentDidMount() {
+    window.onmouseup = () => {
+      this.releaseToast();
+    };
+    this.setAnimationDuration();
+    this.setRTLProperties();
+    this.add();
+    // if (this.props.autoRemove && this.props.pauseWhenWindowUnfocus) {
+    //   document.body.addEventListener("mouseleave", this.pauseToast());
+    //   window.addEventListener("focus", this.resumeToast());
+    // }
   }
   componentDidUpdate() {}
   render() {
@@ -357,7 +365,7 @@ class Toast extends Component {
               )}
               <div className="toast-details-container">
                 <span>{this.props.title}</span>
-                <p>{this.props.description ? this.props.description : null}</p>
+                {this.getDescription()}
               </div>
             </div>
             {this.props.autoRemove || this.props.removeWhenClick ? null : (
